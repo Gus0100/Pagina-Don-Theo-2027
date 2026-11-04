@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cabaña Don Theo | Carnicería mayorista y minorista</title>
+<meta name="description" content="Carnicería mayorista y minorista en Laferrere, San Justo y Ramos Mejía. Carnes frescas, cortes premium y venta por mayor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#203e8b; --azul-oscuro:#192a56; --arena:#e2cdae; --crema:#ede5da;
+  --gris:#e8e5e0; --blanco:#fdfffe; --negro:#000000;
+  --titulos:"Bitter",Georgia,serif; --texto:"Source Sans 3",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto;scroll-padding-top:64px}
+body{font-family:var(--texto);font-size:1.0625rem;line-height:1.55;color:var(--negro);background:var(--blanco);
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--arena);outline-offset:2px}
+h1,h2,h3{font-family:var(--titulos);line-height:1.2}
+h2{font-size:1.9rem;color:var(--azul-oscuro);margin-bottom:.5rem}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.intro{max-width:60ch;margin-bottom:28px}
+
+/* Barra superior */
+.top{background:var(--azul-oscuro);color:var(--blanco);position:sticky;top:0;z-index:5;padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+.top strong{font-family:var(--titulos);font-size:1.15rem}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}
+.top nav a{text-decoration:none;font-weight:600;font-size:.95rem}
+.top nav a:hover{text-decoration:underline}
+
+/* Portada */
+.hero{background:var(--azul);color:var(--blanco);text-align:center;padding:72px 0 64px}
+.logo{width:150px;height:150px;border-radius:50%;background:var(--crema);color:var(--azul-oscuro);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:.85rem;font-weight:600;padding:16px;
+  border:4px solid var(--arena)}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+.hero h1{font-size:clamp(2.4rem,7vw,4rem);margin-bottom:12px}
+.hero p{font-size:1.2rem;max-width:44ch;margin:0 auto 28px;color:var(--crema)}
+
+/* Botones */
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.hero .btns{justify-content:center}
+.btn{display:inline-block;padding:11px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.98rem;
+  background:var(--azul);color:var(--blanco);border:2px solid var(--azul)}
+.btn.claro{background:var(--arena);color:var(--azul-oscuro);border-color:var(--arena)}
+.btn.borde{background:transparent;color:var(--azul);border-color:var(--azul)}
+.hero .btn.borde{color:var(--blanco);border-color:var(--blanco)}
+.btn:hover{filter:brightness(.92)}
+
+/* Imágenes de ejemplo: reemplazar por <img> */
+.ph{background:var(--gris);color:#555;display:flex;align-items:center;justify-content:center;text-align:center;
+  font-size:.9rem;padding:12px;min-height:160px;border:2px dashed #b9b4ab}
+img.foto{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Quiénes somos */
+.nosotros{background:var(--crema)}
+.nosotros .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.nosotros .ph{min-height:260px}
+
+/* Sedes */
+.grilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.sede{border:2px solid var(--gris);background:var(--blanco);display:flex;flex-direction:column}
+.sede .ph,.sede .foto-caja{height:170px;min-height:0;border-width:0 0 2px 0}
+.sede .cuerpo{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.etiqueta{align-self:flex-start;background:var(--arena);color:var(--azul-oscuro);font-weight:600;font-size:.82rem;padding:2px 10px;border-radius:99px}
+.sede h3{font-size:1.25rem;color:var(--azul-oscuro)}
+.sede p{font-size:.98rem}
+.sede .btns{margin-top:auto;padding-top:10px}
+.sede .btn{padding:8px 12px;font-size:.9rem}
+.sede.pronto{background:var(--crema);border-style:dashed;border-color:var(--arena)}
+
+/* Mayorista */
+.mayorista{background:var(--azul-oscuro);color:var(--blanco)}
+.mayorista h2{color:var(--blanco)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:20px}
+.mayorista h3{font-size:1.15rem;color:var(--arena);margin-bottom:8px}
+.mayorista ul{padding-left:20px}
+.mayorista li{margin-bottom:4px}
+
+/* Preguntas */
+details{border-bottom:2px solid var(--gris);padding:14px 0;max-width:760px}
+summary{font-weight:600;cursor:pointer;color:var(--azul-oscuro)}
+details p{margin-top:8px}
+
+/* Redes */
+.redes{background:var(--crema)}
+.redes .btns{margin-top:6px}
+
+footer{background:var(--azul-oscuro);color:var(--crema);padding:28px 0;font-size:.95rem;text-align:center}
+footer a{color:var(--arena)}
+
+/* Botón flotante de WhatsApp (solo Laferrere Minorista) */
+.wsp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:10;width:58px;height:58px;
+  border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;border:3px solid var(--blanco)}
+.wsp svg{width:32px;height:32px;fill:#fff}
+
+@media (max-width:720px){
+  .nosotros .wrap{grid-template-columns:1fr}
+  .top nav{display:none}
+  section{padding:44px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <strong>Cabaña Don Theo</strong>
+    <nav>
+      <a href="#sedes">Sedes</a>
+      <a href="#mayorista">Mayorista</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#redes">Redes</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- PORTADA -->
+<section class="hero">
+  <div class="wrap">
+    <!-- LOGO: reemplazá el texto por <img src="logo.png" alt="Logo Cabaña Don Theo"> -->
+    <div class="logo">Logo</div>
+    <h1>Cabaña Don Theo</h1>
+    <p>Carnicería mayorista y minorista. Carne fresca, de nuestra cabaña a tu mesa.</p>
+    <div class="btns">
+      <a class="btn claro" href="#sedes">Ver sedes</a>
+      <a class="btn borde" href="#mayorista">Venta mayorista</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="nosotros">
+  <div class="wrap">
+    <div>
+      <h2>Quiénes somos</h2>
+      <p>Somos una carnicería con locales en Laferrere, San Justo y Ramos Mejía. Desde nuestra sede mayorista abastecemos a todos nuestros locales, para que cada corte llegue fresco y con la misma calidad.</p>
+      <p style="margin-top:10px">Atendemos tanto al vecino que busca su compra del día como a restaurantes, comercios y eventos que necesitan cantidad.</p>
+    </div>
+    <!-- FOTO: reemplazá este bloque por <img class="foto" src="foto-local.jpg" alt="Nuestro local"> -->
+    <div class="ph">Foto del local o del equipo</div>
+  </div>
+</section>
+
+<!-- SEDES -->
+<section id="sedes">
+  <div class="wrap">
+    <h2>Nuestras sedes</h2>
+    <p class="intro">Elegí el local más cercano. Cada sede tiene su propio contacto y su canal de difusión de WhatsApp con ofertas y novedades.</p>
+    <div class="grilla">
+
+      <article class="sede">
+        <!-- FOTO: <img class="foto" src="laferrere-minorista.jpg" alt="Cabaña Don Theo Laferrere Minorista"> -->
+        <div class="ph">Foto Laferrere Minorista</div>
+        <div class="cuerpo">
+          <span class="etiqueta">Minorista · Sucursal principal</span>
+          <h3>Laferrere Minorista</h3>
+          <p>Juan Manuel de Rosas 11390, Gregorio de Laferrere</p>
+          <p>Lunes a sábados de 5 a 14:30 hs</p>
+          <p>Podés hacer tu pedido con anticipación y retirarlo en el local, con pago en el momento.</p>
+          <div class="btns">
+            <a class="btn" href="https://maps.app.goo.gl/zu5oiHACN2qGD4df7" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn borde" href="https://wa.me/5491131332517" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn borde" href="https://whatsapp.com/channel/0029VagNMwVDZ4Laz2CVbg1a" target="_blank" rel="noopener">Canal de ofertas</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sede">
+        <!-- FOTO: <img class="foto" src="laferrere-mayorista.jpg" alt="Cabaña Don Theo Laferrere Mayorista"> -->
+        <div class="ph">Foto Laferrere Mayorista</div>
+        <div class="cuerpo">
+          <span class="etiqueta">Mayorista · Casa central</span>
+          <h3>Laferrere Mayorista</h3>
+          <p>Juan Manuel de Rosas 11282, Gregorio de Laferrere</p>
+          <p>Lunes a sábados de 5 a 14 hs</p>
+          <p>Medias reses, piezas de res y cerdo, achuras, congelados y cajones de pollo.</p>
+          <div class="btns">
+            <a class="btn" href="https://maps.app.goo.gl/mnndYKQjX1a5UX2EA" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn borde" href="https://wa.me/5491139527155" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn borde" href="https://whatsapp.com/channel/0029Vb73AJhFi8xaboSCkl1c" target="_blank" rel="noopener">Canal mayorista</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sede">
+        <!-- FOTO: <img class="foto" src="san-justo.jpg" alt="Cabaña Don Theo San Justo"> -->
+        <div class="ph">Foto San Justo</div>
+        <div class="cuerpo">
+          <span class="etiqueta">Minorista</span>
+          <h3>San Justo</h3>
+          <p>Paraguay 2581, San Justo</p>
+          <p>Lunes a viernes de 8 a 20 hs · Sábados de 8 a 17 hs</p>
+          <p>Hacemos envíos por la zona.</p>
+          <div class="btns">
+            <a class="btn" href="https://maps.app.goo.gl/gX7cYLYzXFaPdWwT7" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn borde" href="https://wa.me/5491150571100" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn borde" href="https://www.instagram.com/cabanadontheosanjusto" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn borde" href="https://whatsapp.com/channel/0029VbC4ntr84OmD9YT7iW0L" target="_blank" rel="noopener">Canal de ofertas</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sede">
+        <!-- FOTO: <img class="foto" src="premium.jpg" alt="Cabaña Don Theo +Premium"> -->
+        <div class="ph">Foto +Premium</div>
+        <div class="cuerpo">
+          <span class="etiqueta">Premium</span>
+          <h3>+Premium</h3>
+          <p>Necochea 176, Ramos Mejía</p>
+          <p>Lunes a viernes de 10 a 20 hs · Sábados de 10 a 18 hs</p>
+          <p>Los mejores cortes y otros menos habituales, además de vinos, congelados, condimentos y especias. Venta solo en el local.</p>
+          <div class="btns">
+            <a class="btn" href="https://maps.app.goo.gl/aim4PzrzX5wDL1oT7" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn borde" href="https://wa.me/5491130710101" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn borde" href="https://www.instagram.com/cabanadontheoramos" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn borde" href="https://whatsapp.com/channel/0029Vb6AHtY8fewiVJ6HSA08" target="_blank" rel="noopener">Canal de ofertas</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sede pronto">
+        <div class="cuerpo">
+          <span class="etiqueta">Próximamente</span>
+          <h3>Morón</h3>
+          <p>Muy pronto vamos a abrir un nuevo local en Morón. Seguinos en redes para enterarte primero.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAYORISTA -->
+<section class="mayorista" id="mayorista">
+  <div class="wrap">
+    <h2>Venta mayorista</h2>
+    <p class="intro">Para restaurantes, comercios y eventos que necesitan cantidad.</p>
+    <div class="cols">
+      <div>
+        <h3>Cómo hacer un pedido</h3>
+        <p>Escribinos por WhatsApp a la sede mayorista e indicanos:</p>
+        <ul>
+          <li>Nombre de quien retira</li>
+          <li>Horario en que pasa</li>
+          <li>El detalle del pedido</li>
+        </ul>
+        <div class="btns" style="margin-top:14px">
+          <a class="btn claro" href="https://wa.me/5491139527155" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <h3>Entregas</h3>
+        <p>Entregamos en zona oeste. Según el volumen de la compra, también llegamos a CABA.</p>
+      </div>
+      <div>
+        <h3>Medios de pago</h3>
+        <p>Tarjetas de crédito y débito, transferencia, efectivo y QR (Mercado Pago, MODO y Cuenta DNI).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="preguntas">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Tienen venta mayorista y minorista?</summary>
+      <p>Sí. La sede mayorista y la sucursal minorista de Laferrere están a pocos metros una de otra. San Justo y +Premium atienden al público.</p>
+    </details>
+    <details>
+      <summary>¿Qué medios de pago aceptan?</summary>
+      <p>Tarjetas de crédito y débito, transferencias, efectivo y pagos con QR (Mercado Pago, MODO y Cuenta DNI).</p>
+    </details>
+    <details>
+      <summary>¿Hacen entregas a domicilio?</summary>
+      <p>San Justo realiza envíos por la zona. En Laferrere podés pedir con anticipación y retirar en el local. +Premium vende solo en el local. Para la venta mayorista, consultá las zonas de entrega.</p>
+    </details>
+    <details>
+      <summary>¿Cómo garantizan la frescura de la carne?</summary>
+      <p>Trabajamos con refrigeración controlada y envasado al vacío para mantener la cadena de frío, con controles de calidad y trazabilidad desde el origen hasta el punto de venta.</p>
+    </details>
+  </div>
+</section>
+
+<!-- REDES -->
+<section class="redes" id="redes">
+  <div class="wrap">
+    <h2>Seguinos</h2>
+    <p class="intro">Ofertas, novedades y cortes del día en nuestras redes.</p>
+    <div class="btns">
+      <a class="btn" href="https://www.instagram.com/cabanadontheolafe" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://www.facebook.com/people/Caba%C3%B1a-Don-Theo-Laferrere/61560021998254/" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn" href="https://www.tiktok.com/@don.theo.laferrere" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn borde" href="https://whatsapp.com/channel/0029VagNMwVDZ4Laz2CVbg1a" target="_blank" rel="noopener">Canal minorista</a>
+      <a class="btn borde" href="https://whatsapp.com/channel/0029Vb73AJhFi8xaboSCkl1c" target="_blank" rel="noopener">Canal mayorista</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Cabaña Don Theo · <a href="mailto:cabanadontheo@gmail.com">cabanadontheo@gmail.com</a></p>
+  </div>
+</footer>
+
+<a class="wsp" href="https://wa.me/5491131332517" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp a Laferrere Minorista">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-1.9c1.8 1 3.7 1.5 5.7 1.5 7 0 12.7-5.6 12.7-12.5S23 3 16 3zm0 22.9c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.4 1.1 1.2-4.2-.3-.4a10 10 0 0 1-1.6-5.4C5.5 10 10.2 5.4 16 5.4s10.5 4.600 10.500 10.100S21.800 25.900 16 25.900zm5.800-7.500c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200l-1 1.200c-.2.200-.4.300-.7.100-1.900-.9-3.100-1.700-4.300-3.700-.3-.5.300-.5.900-1.600.1-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.200-1.200 2.900s1.200 3.400 1.400 3.600c.2.200 2.400 3.700 5.900 5.200 2.200.9 3 1 4.100.8.700-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+</body>
+</html>
